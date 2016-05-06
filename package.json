@@ -27,10 +27,11 @@
   },
   "dependencies": {
     "bower": "^1.7.9",
-    "express": "^4.9.5"
+    "express": "^4.9.5",
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "start": "node example/server/default.js",
-    "postinstall": "bower install"
+    "postinstall": "bower install && grunt build"
   }
 }
