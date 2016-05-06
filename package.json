@@ -23,12 +23,12 @@
     "bower": "^1.7.9"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.0.1",
     "bower": "^1.7.9",
     "express": "^4.9.5",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1"
   },
   "scripts": {
     "start": "node example/server/default.js",
