@@ -13,21 +13,72 @@
     <script type="text/javascript" src="js/Default.js"></script>
     
     <!-- Stylesheets! -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
     <link rel="stylesheet" type="text/css" href="css/Default.css" />
 
 </head>
 <body ng-app="carouselApp" ng-controller="IndexController">
-
-    <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#">ngCarouselThumbnails</a>
+     </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
     
-    <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
     
-    <carousel-thumbnails ng-model="images_callback" callback-click="onClick" selected="selected"></carousel-thumbnails>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
     
-    <carousel-thumbnails ng-model="images_lazy" callback-click="onClick"  mode="'lazy'" callback-lazy="onLazy"></carousel-thumbnails>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images_callback" callback-click="onClick" selected="selected"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images_lazy" callback-click="onClick"  mode="'lazy'" callback-lazy="onLazy"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic usage</h2>
+        <carousel-thumbnails ng-model="images_push" callback-click="onClick" mode="'push'"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+  </div>
+    
+    
+    
+    
         
-    <carousel-thumbnails ng-model="images_push" callback-click="onClick" mode="'push'"></carousel-thumbnails>
     
     <button ng-click="addImages()">add image</button>
     <button ng-click="pushImages()">push image</button>

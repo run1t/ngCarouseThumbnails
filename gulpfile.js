@@ -22,7 +22,14 @@
 
     gulp.task('watch', function() {
       livereload.listen();
-      gulp.watch(['components/*','example/*/*'], ['build']);
+      gulp.watch(['components/*','example/*/*','example/*'], ['build','html']);
+    });
+    
+    gulp.task('html', function() {
+      gulp.src('example/*')
+        .pipe(gulp.dest(''))
+        .pipe(livereload())
+        .pipe(notify({ message: 'HTML task complete' }));
     });
 
     gulp.task('default',['build','watch']);
