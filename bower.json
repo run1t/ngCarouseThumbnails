@@ -1,0 +1,27 @@
+{
+  "name": "ng-carousel-thumbnails",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Wildhoney/ngRangeSlider",
+  "authors": [
+    "run1t <reunanln@gmail.com>"
+  ],
+  "description": "Make an easy thumbnails carousel",
+  "main": "dist/ng-carousel-thumbnails.min.js",
+  "keywords": [
+    "range",
+    "slider",
+    "angular",
+    "module"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "example/js/vendor"
+  ],
+  "dependencies": {
+    "angular": "~1.5.5",
+    "underscore": "~1.8.3"
+  }
+}

@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 25px;
+}
+
+
+/*carousel-thumbnail*/
+section.carousel-thumbnail {
+    position: relative;
+    width: 400px;
+    height: 150px;
+    margin-left: 20px;
+}
+
+section.carousel-thumbnail .container{
+  overflow: hidden;
+  width: 400px;
+  height: 150px;
+  white-space: nowrap;
+}
+
+section.carousel-thumbnail .container .left{
+  width: 30px;
+  height: 200px;
+  position: absolute;
+  top:0;
+  left: -45px;
+  cursor: pointer;
+  background: white;
+  z-index: 2;
+}
+
+section.carousel-thumbnail .container .left::before{
+  color:black;
+  font-size: 25px;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 2em;
+  content:'\f060';
+  color:#45ADA8;
+}
+
+
+section.carousel-thumbnail .container .right{
+  width: 30px;
+  height: 200px;
+  position: absolute;
+  top:0;
+  right: -10px;
+  cursor: pointer;
+  background: white;
+  z-index: 2;
+}
+
+section.carousel-thumbnail .container .right::before{
+  color:black;
+  font-size: 25px;
+  position: absolute;
+  top: 60px;
+  left: 5px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 2em;
+  content:'\f061';
+  color:#45ADA8;
+}
+
+section.carousel-thumbnail .container .thumbnails{
+  margin-left: 20px;
+  margin-top: 25px;
+  display: inline-block;
+}
+
+section.carousel-thumbnail .container .thumbnails img{
+  -webkit-transition:all ease 0.5s;
+  transition:all ease 0.5s;
+  border-radius: 3px;
+  width: 100px;
+  position: relative;
+  left:0;
+}
+
+section.carousel-thumbnail .container .thumbnails img.selected{
+  border-radius: 50%;
+}

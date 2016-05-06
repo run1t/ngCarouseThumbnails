@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>ngRangeSlider</title>
+
+    <!-- Dependencies! -->
+    <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="js/vendor/underscore/underscore.js"></script>
+    <script type="text/javascript" src="js/vendor/ng-carousel-thumbnails/ng-carousel-thumbnails.js"></script>
+
+    <!-- Application! -->
+    <script type="text/javascript" src="js/Default.js"></script>
+    
+    <!-- Stylesheets! -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Default.css" />
+
+</head>
+<body ng-app="carouselApp" ng-controller="IndexController">
+
+    <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
+    
+    <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails>
+    
+    <carousel-thumbnails ng-model="images_callback" callback-click="onClick" selected="selected"></carousel-thumbnails>
+    
+    <carousel-thumbnails ng-model="images_lazy" callback-click="onClick"  mode="'lazy'" callback-lazy="onLazy"></carousel-thumbnails>
+        
+    <carousel-thumbnails ng-model="images_push" callback-click="onClick" mode="'push'"></carousel-thumbnails>
+    
+    <button ng-click="addImages()">add image</button>
+    <button ng-click="pushImages()">push image</button>
+    
+    <select
+      ng-model="selected"
+      ng-options="idx as idx for (idx, choice) in images_selected"
+      ng-change="select_update()">
+</select>
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+</body>
+</html>
