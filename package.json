@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/run1t/ngCarouselThumbnails",
   "devDependencies": {
-    "bower": "^1.7.9",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.0.1"
+    "bower": "^1.7.9"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1",
     "bower": "^1.7.9",
     "express": "^4.9.5",
     "gulp": "^3.9.1"
