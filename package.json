@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "description": "Make an easy thumbnails carousel",
   "main": "dist/ng-carousel-thumbnails.min.js",
-  "scripts": {
-    "start": "node example/server/default.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/run1t/ngCarouselThumbnails"
@@ -31,5 +27,9 @@
   },
   "dependencies": {
     "express": "^4.9.5"
+  },
+  "scripts": {
+    "start": "node example/server/default.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
