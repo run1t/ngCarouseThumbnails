@@ -27,6 +27,7 @@
                 $scope.onClick = function (index,url) {
                   
                   if($scope._selection){
+                    $scope.selected = index;
                     $scope._selected = index;
                   }
                   
@@ -168,14 +169,14 @@
                 
                 /**
                  * @property _right
-                 * @type {String}
+                 * @type {Boolen}
                  * @private
                  */
                 scope._right = false;
                 
                 /**
                  * @property _left
-                 * @type {String}
+                 * @type {Boolen}
                  * @private
                  */
                 scope._left = false;
@@ -245,6 +246,10 @@
                   _refresh();
                 };
                 
+                /**
+                 * @method _offsetLeft
+                 * @return {void}
+                 */
                 scope._offsetLeft = function(){
                   if(-scope._currentLeftOffset > 0){
                     scope._currentLeftOffset += scope._offset;
@@ -253,7 +258,11 @@
                   }
                 
                 };
-            
+                
+                /**
+                 * @method _offsetRight
+                 * @return {void}
+                 */
                 scope._offsetRight = function(){
                   if(scope._sizeImages + scope._currentLeftOffset > scope._sizeContainer){
                     scope._currentLeftOffset -= scope._offset;

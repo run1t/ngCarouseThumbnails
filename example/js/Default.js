@@ -4,19 +4,7 @@
     $angular.module('carouselApp', ['ngCarouselThumbnails']).controller('IndexController', function IndexController($scope,$interval) {
 
         /**
-         * @property range
-         * @type {{from: number, to: number}}
-         */
-        $scope.range = { from: 0, to: 100 };
-        
-        /**
-         * @property max
-         * @type {Number}
-         */
-        $scope.max = 100;
-        
-        /**
-         * @property colors
+         * @property images
          * @type {[string...]}
          */
         $scope.images = [
@@ -27,9 +15,9 @@
         ];
         
         var images_iter = 4;
+        
         $scope.addImages = function(){
           $scope.images.push('http://dummyimage.com/100x100/000/fff&text='+(++images_iter));
-          console.log($scope.images);
         };
 
         /**
@@ -44,11 +32,7 @@
           'http://dummyimage.com/100x100/000/fff&text=5'
         ];
         
-        $scope.selected = 2;  
-        
-        $scope.select_update = function(){
-            console.log($scope.selected);
-        };
+        $scope.selected = 0;  
         
         /**
          * @property colors
@@ -60,9 +44,7 @@
           'http://dummyimage.com/100x100/000/fff&text=3',
           'http://dummyimage.com/100x100/000/fff&text=4',
           'http://dummyimage.com/100x100/000/fff&text=5'
-        ];
-        
-        $scope.selected = 2;  
+        ]; 
         
         $scope.onClick = function(index,el){
           console.log(index,el);
@@ -96,7 +78,7 @@
         $scope.pushImages = function(){
           $scope.images_push.push('http://dummyimage.com/100x100/000/fff&text='+(++push_iter));
         };
-
-    });
-
+        
+    })
+    .filter("prettyJSON", () => json => JSON.stringify(json, null, " "));
 })(window.angular);

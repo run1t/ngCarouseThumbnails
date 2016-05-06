@@ -27,9 +27,7 @@
     
     gulp.task('html', function() {
       gulp.src('example/*')
-        .pipe(gulp.dest(''))
-        .pipe(livereload())
-        .pipe(notify({ message: 'HTML task complete' }));
+        .pipe(livereload());
     });
 
     gulp.task('default',['build','watch']);
