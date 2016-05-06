@@ -32,6 +32,6 @@
   },
   "scripts": {
     "start": "node example/server/default.js",
-    "postinstall": "bower install && grunt build"
+    "postinstall": "bower install && gulp build"
   }
 }
