@@ -30,6 +30,6 @@
   },
   "scripts": {
     "start": "node example/server/default.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   }
 }
