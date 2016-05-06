@@ -44,7 +44,7 @@ section.carousel-thumbnail .container .left::before{
   font: normal normal normal 14px/1 FontAwesome;
   font-size: 2em;
   content:'\f060';
-  color:#45ADA8;
+  color:blue;
 }
 
 
@@ -68,7 +68,7 @@ section.carousel-thumbnail .container .right::before{
   font: normal normal normal 14px/1 FontAwesome;
   font-size: 2em;
   content:'\f061';
-  color:#45ADA8;
+  color:blue;
 }
 
 section.carousel-thumbnail .container .thumbnails{
