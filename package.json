@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/run1t/ngCarouseThumbnails"
+    "url": "https://github.com/run1t/ngCarouselThumbnails"
   },
   "keywords": [
     "carousel",
@@ -19,9 +19,9 @@
   "author": "run1t <reunanln@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/run1t/ngCarouseThumbnails/issues"
+    "url": "https://github.com/run1t/ngCarouselThumbnails/issues"
   },
-  "homepage": "https://github.com/run1t/ngCarouseThumbnails",
+  "homepage": "https://github.com/run1t/ngCarouselThumbnails",
   "devDependencies": {
     "bower": "^1.7.9",
     "gulp": "^3.9.1",
