@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>ngCarouselThumbnails</title>
+
+    <!-- Dependencies! -->
+    <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="js/vendor/underscore/underscore.js"></script>
+    <script type="text/javascript" src="js/vendor/ng-carousel-thumbnails/dist/ng-carousel-thumbnails.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- Application! -->
+    <script type="text/javascript" src="js/Default.js"></script>
+
+    <!-- Stylesheets! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" href="js/vendor/ng-carousel-thumbnails/dist/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/Default.css" />
+</head>
+<body ng-app="carouselApp" ng-controller="IndexController">
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#">ngCarouselThumbnails</a>
+     </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Basic usage</h4>
+        <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
+        <button class="btn btn-success" ng-click="addImages()">add image</button>
+        <h5>Result</h5>
+        <code class="pre-scrollable">
+        {{images | prettyJSON}}
+        </code>
+      </div>
+      <div class="col-md-6">
+        <h4>HTML</h4>
+        <pre><code class="html">&lt;carousel-thumbnails ng-model="images" &gt; &lt;/carousel-thumbnails&gt;</code></pre>
+        <h4>JS</h4>
+        <pre class="pre-scrollable"><code class="javascript">
+$scope.images = [
+  'http://dummyimage.com/100x100/000/fff&text=1',
+  'http://dummyimage.com/100x100/000/fff&text=2',
+  'http://dummyimage.com/100x100/000/fff&text=3',
+  'http://dummyimage.com/100x100/000/fff&text=4'
+];
+          
+var images_iter = 4;
+          
+$scope.addImages = function(){
+  $scope.images.push('http://dummyimage.com/100x100/000/fff&text='+(++images_iter));
+};
+        </code></pre>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Select</h2>
+        <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails>
+        <h5>Select one thumbnail : </h5>
+        <select class="form-control" style="width:100px;"
+          ng-init="selected = 0" 
+          ng-model="selected"
+          ng-options="idx as idx for (idx, choice) in images_selected"
+          ng-change="select_update()"></select>
+        <h5>Result : </h5>
+        <code> { selected: {{selected}} }</code>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic 1</h2>
+        <carousel-thumbnails ng-model="images_callback" callback-click="onClick" selected="selected"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic 2</h2>
+        <carousel-thumbnails ng-model="images_lazy" callback-click="onClick"  mode="'lazy'" callback-lazy="onLazy"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Basic 3</h2>
+        <carousel-thumbnails ng-model="images_push" callback-click="onClick" mode="'push'"></carousel-thumbnails>
+      </div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+  </div>
+    
+    
+    
+    
+        
+    
+
+    <button ng-click="pushImages()">push image</button>
+    
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+</body>
+</html>

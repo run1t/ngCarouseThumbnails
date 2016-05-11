@@ -1,20 +1,20 @@
 @charset "UTF-8";
-.carousel-thumbnail { position: relative; width: 400px; height: 150px; margin-left: 20px; }
+.carouselThumbnail { position: relative; width: 400px; height: 150px; margin-left: 20px; }
 
-.carousel-thumbnail__container { width: 400px; height: 150px; overflow: hidden; white-space: nowrap; }
+.carouselThumbnail__container { width: 400px; height: 150px; overflow: hidden; white-space: nowrap; }
 
-.carousel-thumbnail__thumbnails { margin-left: 20px; margin-top: 25px; display: inline-block; }
+.carouselThumbnail__thumbnails { margin-left: 20px; margin-top: 25px; display: inline-block; }
 
-.carousel-thumbnail__arrow { position: absolute; top: 0; width: 30px; height: 150px; z-index: 2; background: white; cursor: pointer; }
+.carouselThumbnail__arrow { position: absolute; top: 0; width: 30px; height: 150px; z-index: 2; background: white; cursor: pointer; }
 
-.carousel-thumbnail__arrow--left { left: -25px; }
+.carouselThumbnail__arrow_left { left: -25px; }
 
-.carousel-thumbnail__arrow--left::before { position: absolute; top: 60px; left: 10px; font-family: "Glyphicons Halflings"; font-size: 2em; color: #45ADA7; content: ""; }
+.carouselThumbnail__arrow_left::before { position: absolute; top: 60px; left: 10px; font-family: "Glyphicons Halflings"; font-size: 2em; color: #45ADA7; content: ""; }
 
-.carousel-thumbnail__arrow--right { right: -10px; }
+.carouselThumbnail__arrow_right { right: -10px; }
 
-.carousel-thumbnail__arrow--right::before { position: absolute; top: 60px; left: 5px; font-family: "Glyphicons Halflings"; font-size: 2em; color: #45ADA7; content: ""; }
+.carouselThumbnail__arrow_right::before { position: absolute; top: 60px; left: 5px; font-family: "Glyphicons Halflings"; font-size: 2em; color: #45ADA7; content: ""; }
 
-.carousel-thumbnail__img { position: relative; left: 0; width: 100px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; -o-transition: all ease 0.5s; transition: all ease 0.5s; }
+.carouselThumbnail__img { position: relative; left: 0; width: 100px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; -o-transition: all ease 0.5s; transition: all ease 0.5s; }
 
-.carousel-thumbnail__img--selected { -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; }
+.carouselThumbnail__img_selected { -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; }

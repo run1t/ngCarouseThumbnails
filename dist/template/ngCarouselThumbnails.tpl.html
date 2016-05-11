@@ -1,8 +1,8 @@
 
-<div class="carousel-thumbnail">
-  <div class="carousel-thumbnail__container">
-    <div class="carousel-thumbnail__arrow carousel-thumbnail__arrow--left" ng-show="_left" ng-click="_offsetLeft()"></div>
-    <div class="carousel-thumbnail__thumbnails" ng-repeat="thumbnails in _model"><img class="carousel-thumbnail__img" ng-class="{.carousel-thumbnail__img--selected: $index == _selected}" src="{{thumbnails}}" ng-click="onClick($index,thumbnails)"/></div>
-    <div class="carousel-thumbnail__arrow carousel-thumbnail__arrow--right" ng-show="_right" ng-click="_offsetRight()"></div>
+<div class="carouselThumbnail">
+  <div class="carouselThumbnail__container">
+    <div class="carouselThumbnail__arrow carouselThumbnail__arrow_left" ng-show="_left" ng-click="_offsetLeft()"></div>
+    <div class="carouselThumbnail__thumbnails" ng-repeat="thumbnails in _model"><img class="carouselThumbnail__img" ng-class="{carouselThumbnail__img_selected: $index == _selected}" src="{{thumbnails}}" ng-click="onClick($index,thumbnails)"/></div>
+    <div class="carouselThumbnail__arrow carouselThumbnail__arrow_right" ng-show="_right" ng-click="_offsetRight()"></div>
   </div>
 </div>

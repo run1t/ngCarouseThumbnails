@@ -8,19 +8,21 @@
         require: 'ngModel',
         scope: {
           model: '=ngModel',
-          callbackClick: '=',
-          callbackLazy: '=',
-          mode: '=',
-          selected: '='
+          callbackClick: '=?',
+          callbackLazy: '=?',
+          mode: '=?',
+          selected: '=?'
         },
         controller: [
           '$scope', function($scope) {
             $scope.onClick = function(index, url) {
-              if ($scope._selection === true) {
+              console.log('onclick');
+              console.log($scope._selection);
+              if ($scope._selection) {
                 $scope.selected = index;
                 $scope._selected = index;
               }
-              if ($scope.callbackClick === true) {
+              if ($scope.callbackClick) {
                 return $scope.callbackClick(index, url);
               }
             };
@@ -32,8 +34,8 @@
           scope._offset = 0;
           scope._sizeContainer = 0;
           scope._sizeImages = 0;
-          scope._selected = scope.selected === void 0 ? scope.selected : -1;
-          scope._selection = scope.selected === void 0 ? true : false;
+          scope._selected = scope.selected ? scope.selected : -1;
+          scope._selection = scope.selected !== void 0 || scope.selected === 0 ? true : false;
           scope._model = scope.model;
           scope._mode = scope.mode;
           scope._callbackClick = scope.callbackClick;

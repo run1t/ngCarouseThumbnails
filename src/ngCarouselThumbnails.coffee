@@ -6,16 +6,18 @@ do ($angular = window.angular, _ = window._) ->
     require: 'ngModel'
     scope:
       model: '=ngModel'
-      callbackClick: '='
-      callbackLazy: '='
-      mode: '='
-      selected: '='
+      callbackClick: '=?'
+      callbackLazy: '=?'
+      mode: '=?'
+      selected: '=?'
     controller: ['$scope', ($scope) ->
       $scope.onClick =  (index,url) ->
-        if $scope._selection is true
+        console.log('onclick')
+        console.log($scope._selection)
+        if $scope._selection
           $scope.selected = index
           $scope._selected = index
-        if $scope.callbackClick is true
+        if $scope.callbackClick
           $scope.callbackClick(index,url)
       return
     ]
@@ -24,15 +26,14 @@ do ($angular = window.angular, _ = window._) ->
       scope._offset            = 0
       scope._sizeContainer     = 0
       scope._sizeImages        = 0
-      scope._selected          = if scope.selected is undefined then scope.selected else -1 
-      scope._selection         = if scope.selected is undefined then true else false 
+      scope._selected          = if scope.selected  then scope.selected else -1 
+      scope._selection         = if scope.selected != undefined || scope.selected is 0  then true else false 
       scope._model             = scope.model
       scope._mode              = scope.mode
       scope._callbackClick     = scope.callbackClick
       scope._callbackLazy      = scope.callbackLazy
       scope._right             = false
       scope._left              = false
-      
       _refresh = () ->
         $timeout( () ->
           scope.$apply()

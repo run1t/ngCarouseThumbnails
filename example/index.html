@@ -1,117 +1,126 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<head>
-
-    <title>ngRangeSlider</title>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>ngCarouselThumbnails</title>
+    
     <!-- Dependencies! -->
     <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
     <script type="text/javascript" src="js/vendor/underscore/underscore.js"></script>
     <script type="text/javascript" src="js/vendor/ng-carousel-thumbnails/dist/ng-carousel-thumbnails.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    
     <!-- Application! -->
     <script type="text/javascript" src="js/Default.js"></script>
-
-    <!-- Stylesheets! -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    
+    <!-- Style -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prettify.css">
     <link rel="stylesheet" type="text/css" href="js/vendor/ng-carousel-thumbnails/dist/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="css/Default.css" />
 </head>
 <body ng-app="carouselApp" ng-controller="IndexController">
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-       <a class="navbar-brand" href="#">ngCarouselThumbnails</a>
-     </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Basic usage</h4>
-        <carousel-thumbnails ng-model="images" ></carousel-thumbnails>
-        <button class="btn btn-success" ng-click="addImages()">add image</button>
-        <h5>Result</h5>
-        <code class="pre-scrollable">
-        {{images | prettyJSON}}
-        </code>
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <h2 class="lone-header">ngCarouselThumbnails</h2>
       </div>
-      <div class="col-md-6">
-        <h4>HTML</h4>
-        <pre><code class="html">&lt;carousel-thumbnails ng-model="images" &gt; &lt;/carousel-thumbnails&gt;</code></pre>
-        <h4>JS</h4>
-        <pre class="pre-scrollable"><code class="javascript">
-$scope.images = [
-  'http://dummyimage.com/100x100/000/fff&text=1',
-  'http://dummyimage.com/100x100/000/fff&text=2',
-  'http://dummyimage.com/100x100/000/fff&text=3',
-  'http://dummyimage.com/100x100/000/fff&text=4'
-];
-          
-var images_iter = 4;
-          
-$scope.addImages = function(){
-  $scope.images.push('http://dummyimage.com/100x100/000/fff&text='+(++images_iter));
-};
-        </code></pre>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Select</h2>
-        <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails>
-        <h5>Select one thumbnail : </h5>
-        <select class="form-control" style="width:100px;"
-          ng-init="selected = 0" 
-          ng-model="selected"
-          ng-options="idx as idx for (idx, choice) in images_selected"
-          ng-change="select_update()"></select>
-        <h5>Result : </h5>
-        <code> { selected: {{selected}} }</code>
-      </div>
-      <div class="col-md-6"></div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Basic usage</h2>
-        <carousel-thumbnails ng-model="images_callback" callback-click="onClick" selected="selected"></carousel-thumbnails>
-      </div>
-      <div class="col-md-6">.col-md-6</div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Basic usage</h2>
-        <carousel-thumbnails ng-model="images_lazy" callback-click="onClick"  mode="'lazy'" callback-lazy="onLazy"></carousel-thumbnails>
-      </div>
-      <div class="col-md-6">.col-md-6</div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Basic usage</h2>
-        <carousel-thumbnails ng-model="images_push" callback-click="onClick" mode="'push'"></carousel-thumbnails>
-      </div>
-      <div class="col-md-6">.col-md-6</div>
+    </header>
+    <section>
+      <div class="container">
+    <ul class="docs-nav">
+      <li><strong>Examples</strong></li>
+      <li><a href="#basic" class="cc-active">Basic</a></li>
+      <li><a href="#selected" class="cc-active">Selected</a></li>
+      <li><a href="#onclick" class="cc-active">onClick</a></li>
+      <li><a href="#lazyloading" class="cc-active">Lazy loading</a></li>
+      <li><a href="#push" class="cc-active">Push</a></li>
+    </ul>
+    <div class="docs-content">
+      <h2> Examples</h2>
+      <h3 id="basic"> Basic</h3>
+      <p> <carousel-thumbnails ng-model="images" ></carousel-thumbnails></p>
+      <p> <button ng-click="addImages()">Add images</button></p>
+      <ul>
+        <li>HTML</li>
+      </ul>
+      <pre class="prettyprint"> &lt;body ng-app="carouselApp" ng-controller="IndexController" &gt;
+   &lt;carousel-thumbnails ng-model="images" &gt; &lt;/carousel-thumbnails&gt;
+   &lt;button ng-click="addImages()"&gt; Add images &lt;/button&gt;
+ &lt;/body&gt;</pre>
+      <ul>
+        <li>Javascript</li>
+      </ul>
+      <pre class="prettyprint">&lt;script&gt;
+        $angular.module('carouselApp', ['ngCarouselThumbnails'])
+          .controller('IndexController', function IndexController($scope) {
+
+            $scope.images = [
+              'http://dummyimage.com/100x100/000/fff&text=1',
+              'http://dummyimage.com/100x100/000/fff&text=2',
+              'http://dummyimage.com/100x100/000/fff&text=3',
+              'http://dummyimage.com/100x100/000/fff&text=4'
+            ];
+                      
+            var images_iter = 4;
+                      
+            $scope.addImages = function(){
+              $scope.images.push('http://dummyimage.com/100x100/000/fff&text='+(++images_iter));
+            };
+        });
+&lt;/script&gt;</pre>
+
+      <h3 id="selected">Selected</h3>
+      <p> <carousel-thumbnails ng-model="images_selected" selected="selected"></carousel-thumbnails></p>
+      <ul>
+        <li>HTML</li>
+      </ul>
+      <pre class="prettyprint"> &lt;body ng-app="carouselApp" ng-controller="IndexController" &gt;
+   &lt;carousel-thumbnails ng-model="images" &gt; &lt;/carousel-thumbnails&gt;
+   &lt;button ng-click="addImages()"&gt; Add images &lt;/button&gt;
+ &lt;/body&gt;</pre>
+      <ul>
+        <li>Javascript</li>
+      </ul>
+      <pre class="prettyprint">&lt;script&gt;
+        $angular.module('carouselApp', ['ngCarouselThumbnails'])
+          .controller('IndexController', function IndexController($scope) {
+
+            $scope.images = [
+              'http://dummyimage.com/100x100/000/fff&text=1',
+              'http://dummyimage.com/100x100/000/fff&text=2',
+              'http://dummyimage.com/100x100/000/fff&text=3',
+              'http://dummyimage.com/100x100/000/fff&text=4'
+            ];
+                      
+            var images_iter = 4;
+                      
+            $scope.addImages = function(){
+              $scope.images.push('http://dummyimage.com/100x100/000/fff&text='+(++images_iter));
+            };
+        });
+&lt;/script&gt;</pre>
     </div>
   </div>
-    
-    
-    
-    
-        
-    
-
-    <button ng-click="pushImages()">push image</button>
-    
-
-    <script>
-      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-      ':35729/livereload.js?snipver=1"></' + 'script>')
-    </script>
+</section>
+<section class="vibrant centered">
+  <div class="">
+    <h4> This documentation template is provided by <a href="http://www.frittt.com" target="_blank">Frittt Templates</a>. You can download and use this template for free. If you have used this template, please pay the developer's effort by Tweeting, sharing on Facebook, social mention or with a linkback. Enjoy! :)</h4>
+  </div>
+</section>
+<footer>
+  <div class="">
+    <p> &copy; Copyright Frittt Templates. All Rights Reserved.</p>
+  </div>
+</footer>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/prettify/prettify.js"></script> 
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+<script src="js/layout.js"></script>
 </body>
 </html>

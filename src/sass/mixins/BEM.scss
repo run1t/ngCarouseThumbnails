@@ -11,7 +11,7 @@
 /// @access public
 /// @param {String} $modifier - Modifier's name
 @mixin modifier($modifier) {
-    &--#{$modifier} {
+    &_#{$modifier} {
         @content;
     }
 }
