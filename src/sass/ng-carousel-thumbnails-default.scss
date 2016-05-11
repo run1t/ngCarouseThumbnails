@@ -1,0 +1,71 @@
+@import 'mixins/BEM';
+@import 'mixins/Compatibility.scss';
+
+@mixin b_arrow($left,$content) {
+  position: absolute;
+  top: 60px;
+  left: $left;
+  font-family: "Glyphicons Halflings";
+  font-size: 2em;
+  color: #45ADA7;
+  content: $content;
+}
+
+.carousel-thumbnail {
+  position: relative;
+  width: 400px;
+  height: 150px;
+  margin-left: 20px;
+  
+  @include e('container') {
+    width: 400px;
+    height: 150px;
+    overflow: hidden;
+    white-space: nowrap;  
+  }
+  
+  @include e('thumbnails') {
+    margin-left: 20px;
+    margin-top: 25px;
+    display: inline-block;
+  }
+  
+  @include e('arrow') {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 150px;
+    z-index: 2;
+    background: white;
+    cursor: pointer;
+      
+    @include m('left') {
+      left: -25px;
+      
+      @include b() {
+        @include b_arrow(10px, '\e079');
+      }
+    }
+    
+    @include m('right') {
+      right: -10px;
+      
+      @include b() {
+        @include b_arrow(5px, '\e080');
+      }
+    }
+  }
+  
+  @include e('img') {
+    position: relative;
+    left:0;
+    width: 100px;
+    
+    @include border-radius(3px);
+    @include transition(all ease 0.5s);
+    
+    @include m('selected') {
+      @include border-radius(50%);
+    }
+  }
+}

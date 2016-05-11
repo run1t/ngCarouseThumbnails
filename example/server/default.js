@@ -8,5 +8,5 @@
 
     app.use(express.static(__dirname + '/..'));
     server.listen($process.env.PORT || 3507);
-
+    console.log('Server listen on port ' + ($process.env.PORT || 3507) );
 })(process);

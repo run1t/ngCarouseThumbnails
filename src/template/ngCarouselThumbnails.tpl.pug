@@ -1,0 +1,6 @@
+.carousel-thumbnail
+  .carousel-thumbnail__container
+    .carousel-thumbnail__arrow.carousel-thumbnail__arrow--left(ng-show="_left",ng-click="_offsetLeft()")
+    .carousel-thumbnail__thumbnails(ng-repeat="thumbnails in _model")
+      img.carousel-thumbnail__img(ng-class="{.carousel-thumbnail__img--selected: $index == _selected}",src="{{thumbnails}}",ng-click="onClick($index,thumbnails)")
+    .carousel-thumbnail__arrow.carousel-thumbnail__arrow--right(ng-show="_right",ng-click="_offsetRight()")
